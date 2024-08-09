@@ -74,7 +74,7 @@ export function TransferTokenForm() {
             setIsReview={setIsReview}
           />
           <a
-            href="https://github.com/hyperlane-xyz/hyperlane-warp-ui-template"
+            href=""
             target="_blank"
             className="flex items-center justify-center powered"
           >
