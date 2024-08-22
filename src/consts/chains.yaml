@@ -19,6 +19,29 @@
 #   rpcUrls:
 #     - http: http://127.0.0.1:8555
 
+bsc:
+  # yaml-language-server: $schema=../schema.json
+  name: bsc
+  displayName: Binance
+  chainId: 56
+  domainId: 56
+  protocol: ethereum
+  isTestnet: false
+  logoURI: /logos/bsc.svg
+  rpcUrls:
+    - http: https://rpc.ankr.com/bsc
+    - http: https://bsc.drpc.org
+    - http: https://bscrpc.com
+  nativeToken:
+    decimals: 18
+    name: BNB
+    symbol: BNB
+  blockExplorers:
+    - apiUrl: https://api.bscscan.com/api
+      family: etherscan
+      name: BscScan
+      url: https://bscscan.com
+
 oort:
   # yaml-language-server: $schema=../schema.json
   name: oort

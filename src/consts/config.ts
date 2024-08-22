@@ -25,7 +25,7 @@ interface Config {
 export const config: Config = Object.freeze({
   isDevMode,
   version,
-  registryUrl,
+  registryUrl: 'https://github.com/catlina-nero/hyperlane-registry',
   explorerApiKeys,
   showTipBox: true,
   showDisabledTokens: true,

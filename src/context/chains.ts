@@ -24,15 +24,16 @@ export async function assembleChainMetadata() {
 
   const registry = new GithubRegistry({ uri: config.registryUrl });
   let defaultChainMetadata = chainMetadata;
-  if (config.registryUrl) {
-    logger.debug('Using custom registry', config.registryUrl);
-    defaultChainMetadata = await registry.getMetadata();
-  } else {
-    logger.debug('Using default published registry');
-    // Note: this is an optional optimization to pre-fetch the content list
-    // and avoid repeated request from the chain logos that will use this info
-    await registry.listRegistryContent();
-  }
+  // if (config.registryUrl) {
+  //   logger.debug('Using custom registry', config.registryUrl);
+  //   defaultChainMetadata = await registry.getMetadata();
+  //   console.log(defaultChainMetadata);
+  // } else {
+  //   logger.debug('Using default published registry');
+  //   // Note: this is an optional optimization to pre-fetch the content list
+  //   // and avoid repeated request from the chain logos that will use this info
+  //   await registry.listRegistryContent();
+  // }
 
   const chains = { ...defaultChainMetadata, ...customChainMetadata };
   return { chains, registry };
