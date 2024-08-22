@@ -23,7 +23,7 @@ export async function assembleChainMetadata() {
   const customChainMetadata = result.data as ChainMap<ChainMetadata>;
 
   const registry = new GithubRegistry({ uri: config.registryUrl });
-  let defaultChainMetadata = chainMetadata;
+  const defaultChainMetadata = chainMetadata;
   // if (config.registryUrl) {
   //   logger.debug('Using custom registry', config.registryUrl);
   //   defaultChainMetadata = await registry.getMetadata();
