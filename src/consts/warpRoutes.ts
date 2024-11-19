@@ -16,7 +16,7 @@ export const warpRouteConfigs: WarpCoreConfig = {
       logoURI: '/logo.png',
       connections: [
         {
-          token: 'ethereum|oort|0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697',
+          token: 'ethereum|ethereum|0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697',
         },
       ],
     },
