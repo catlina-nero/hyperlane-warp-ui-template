@@ -67,7 +67,7 @@ bsc:
 
 oort:
   # yaml-language-server: $schema=../schema.json
-  name: oortmainnet
+  name: oort
   displayName: OORT
   chainId: 970
   domainId: 970
