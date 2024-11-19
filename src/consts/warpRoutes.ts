@@ -6,6 +6,21 @@ import { TokenStandard, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 export const warpRouteConfigs: WarpCoreConfig = {
   tokens: [
     {
+      chainName: 'ethereum',
+      standard: TokenStandard.EvmHypCollateral,
+      decimals: 18,
+      symbol: 'OORT',
+      name: 'OORT',
+      addressOrDenom: '0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697',
+      collateralAddressOrDenom: '0x5651fA7a726B9Ec0cAd00Ee140179912B6E73599',
+      logoURI: '/logo.png',
+      connections: [
+        {
+          token: 'ethereum|oort|0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697',
+        },
+      ],
+    },
+    {
       chainName: 'bsc',
       standard: TokenStandard.EvmHypCollateral,
       decimals: 18,

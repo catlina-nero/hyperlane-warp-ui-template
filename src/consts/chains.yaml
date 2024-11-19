@@ -19,6 +19,29 @@
 #   rpcUrls:
 #     - http: http://127.0.0.1:8555
 
+ethereum:
+  # yaml-language-server: $schema=../schema.json
+  name: ethereum
+  displayName: Ethereum
+  chainId: 1
+  domainId: 1
+  protocol: ethereum
+  isTestnet: false
+  logoURI: /logos/weth.png
+  rpcUrls:
+    - http: https://mainnet.gateway.tenderly.co
+    - http: https://eth.llamarpc.com
+    - http: https://bscrpc.com
+  nativeToken:
+    decimals: 18
+    name: ETH
+    symbol: ETH
+  blockExplorers:
+    - apiUrl: https://api.etherscan.com/api
+      family: etherscan
+      name: EtherScan
+      url: https://etherscan.com
+
 bsc:
   # yaml-language-server: $schema=../schema.json
   name: bsc
@@ -44,7 +67,7 @@ bsc:
 
 oort:
   # yaml-language-server: $schema=../schema.json
-  name: oort
+  name: oortmainnet
   displayName: OORT
   chainId: 970
   domainId: 970
