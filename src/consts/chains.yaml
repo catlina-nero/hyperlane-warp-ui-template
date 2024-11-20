@@ -31,7 +31,6 @@ ethereum:
   rpcUrls:
     - http: https://mainnet.gateway.tenderly.co
     - http: https://eth.llamarpc.com
-    - http: https://bscrpc.com
   nativeToken:
     decimals: 18
     name: ETH
