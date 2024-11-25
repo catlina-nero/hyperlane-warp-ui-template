@@ -18,6 +18,9 @@ export const warpRouteConfigs: WarpCoreConfig = {
         {
           token: 'ethereum|oort|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B',
         },
+        {
+          token: 'ethereum|bsc|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B',
+        },
       ],
     },
     {
