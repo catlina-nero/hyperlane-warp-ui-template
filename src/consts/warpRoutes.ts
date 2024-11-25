@@ -33,6 +33,9 @@ export const warpRouteConfigs: WarpCoreConfig = {
         {
           token: 'ethereum|oort|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B',
         },
+        {
+          token: 'ethereum|ethereum|0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697'
+        },
       ],
     },
     {
