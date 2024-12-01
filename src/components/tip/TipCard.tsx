@@ -15,7 +15,7 @@ export function TipCard() {
       </div>
       <div className="flex items-end justify-between">
         <p className="mt-1 text-xs sm:text-sm max-w-[100%]">
-          You can now Bridge your OORT tokens to BSC and back seamlessly.
+          You can now Bridge your OORT tokens to supported chains back and forth.
         </p>
       </div>
     </Card>
