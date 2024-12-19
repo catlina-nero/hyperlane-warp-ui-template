@@ -1,0 +1,81 @@
+# A map of chain names to ChainMetadata
+# Chains can be defined here, in chains.json, or in chains.ts
+# Chains already in the SDK need not be included here unless you want to override some fields
+# Schema here: https://github.com/hyperlane-xyz/hyperlane-monorepo/blob/main/typescript/sdk/src/metadata/chainMetadataTypes.ts
+---
+# Example using local anvil chain:
+# anvil1:
+#   chainId: 31337
+#   domainId: 31337
+#   name: anvil1
+#   protocol: ethereum
+#   rpcUrls:
+#     - http: http://127.0.0.1:8545
+# anvil2:
+#   chainId: 31338
+#   domainId: 31338
+#   name: anvil2
+#   protocol: ethereum
+#   rpcUrls:
+#     - http: http://127.0.0.1:8555
+
+ethereum:
+  # yaml-language-server: $schema=../schema.json
+  name: ethereum
+  displayName: Ethereum
+  chainId: 1
+  domainId: 1
+  protocol: ethereum
+  isTestnet: false
+  logoURI: /logos/weth.png
+  rpcUrls:
+    - http: https://mainnet.gateway.tenderly.co
+    - http: https://eth.llamarpc.com
+  nativeToken:
+    decimals: 18
+    name: ETH
+    symbol: ETH
+  blockExplorers:
+    - apiUrl: https://api.etherscan.com/api
+      family: etherscan
+      name: EtherScan
+      url: https://etherscan.com
+
+bsc:
+  # yaml-language-server: $schema=../schema.json
+  name: bsc
+  displayName: Binance
+  chainId: 56
+  domainId: 56
+  protocol: ethereum
+  isTestnet: false
+  logoURI: /logos/bsc.svg
+  rpcUrls:
+    - http: https://rpc.ankr.com/bsc
+    - http: https://bsc.drpc.org
+    - http: https://bscrpc.com
+  nativeToken:
+    decimals: 18
+    name: BNB
+    symbol: BNB
+  blockExplorers:
+    - apiUrl: https://api.bscscan.com/api
+      family: etherscan
+      name: BscScan
+      url: https://bscscan.com
+
+oort:
+  # yaml-language-server: $schema=../schema.json
+  name: oort
+  displayName: OORT
+  chainId: 970
+  domainId: 970
+  protocol: ethereum
+  isTestnet: false
+  logoURI: /logo.png
+  rpcUrls:
+    - http: https://mainnet-rpc.oortech.com
+  nativeToken:
+    symbol: OORT
+    name: OORT
+    decimals: 18
