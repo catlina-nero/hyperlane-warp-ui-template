@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ConnectWalletButton } from '../../features/wallet/ConnectWalletButton';
 import Logo from '../../images/logos/app-logo.svg';
 
 export function Header() {
@@ -11,7 +10,7 @@ export function Header() {
           <Image src={Logo} alt="" />
         </Link>
         <div className="wallet-container flex flex-col items-end gap-2 md:flex-row-reverse md:items-start">
-          <ConnectWalletButton />
+          {/* <ConnectWalletButton /> */}
         </div>
       </div>
     </header>
