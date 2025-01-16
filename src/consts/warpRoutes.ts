@@ -69,17 +69,17 @@ export const warpRouteConfigs: WarpCoreConfig = {
       logoURI: '/usdc.svg',
       connections: [
         {
-          token: 'ethereum|oort|0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+          token: 'ethereum|oort|0xD803E5a381887613d9cFa7820D53441D3C966AD2',
         },
       ],
     },
     {
       chainName: 'oort',
       standard: TokenStandard.EvmHypCollateralFiat,
-      decimals: 18,
-      symbol: 'USDC',
-      name: 'USD Coin',
-      addressOrDenom: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+      decimals: 6,
+      symbol: 'USDC.e',
+      name: 'Bridged USDC (OORT)',
+      addressOrDenom: '0xD803E5a381887613d9cFa7820D53441D3C966AD2',
       logoURI: '/usdc.svg',
       connections: [
         {
