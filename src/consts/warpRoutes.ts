@@ -69,7 +69,7 @@ export const warpRouteConfigs: WarpCoreConfig = {
       logoURI: '/usdc.svg',
       connections: [
         {
-          token: 'ethereum|oort|0xD803E5a381887613d9cFa7820D53441D3C966AD2',
+          token: 'ethereum|oort|0x0c2FA0738a8D44A20F0742Fbfc3d5f7DD056d0E2',
         },
       ],
     },
