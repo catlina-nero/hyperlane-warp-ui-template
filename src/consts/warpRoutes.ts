@@ -71,41 +71,17 @@ export const warpRouteConfigs: WarpCoreConfig = {
         {
           token: 'ethereum|oort|0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
         },
-        {
-          token: 'ethereum|bsc|0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-        },
-      ],
-    },
-    {
-      chainName: 'bsc',
-      standard: TokenStandard.EvmHypCollateral,
-      decimals: 18,
-      symbol: 'USDC',
-      name: 'USD Coin',
-      addressOrDenom: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-      collateralAddressOrDenom: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-      logoURI: '/usdc.svg',
-      connections: [
-        {
-          token: 'ethereum|oort|0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-        },
-        {
-          token: 'ethereum|ethereum|0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-        },
       ],
     },
     {
       chainName: 'oort',
-      standard: TokenStandard.EvmHypNative,
+      standard: TokenStandard.EvmHypCollateralFiat,
       decimals: 18,
       symbol: 'USDC',
       name: 'USD Coin',
       addressOrDenom: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
       logoURI: '/usdc.svg',
       connections: [
-        {
-          token: 'ethereum|bsc|0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-        },
         {
           token: 'ethereum|ethereum|0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
         },

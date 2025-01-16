@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 import { DocsIcon, HistoryIcon, IconButton } from '@hyperlane-xyz/widgets';
-import { links } from '../../consts/links';
 import { Color } from '../../styles/Color';
 import { useStore } from '../store';
 
@@ -21,7 +20,7 @@ export function WalletFloatingButtons() {
         <HistoryIcon color={Color.primary['500']} height={20} width={20} />
       </IconButton>
       <Link
-        href={links.warpDocs}
+        href={''}
         target="_blank"
         className={`p-0.5 ${styles.roundedCircle} ${styles.link}`}
       >

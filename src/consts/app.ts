@@ -8,7 +8,7 @@ export const MAIN_FONT = SpaceGrotesk({
   fallback: ['sans-serif'],
 });
 export const APP_NAME = 'OORT Bridge';
-export const APP_DESCRIPTION = 'Bridge OORT tokens to BSC';
+export const APP_DESCRIPTION = 'Bridge OORT tokens to supported chains';
 export const APP_URL = 'hyperlane-warp-template.vercel.app';
 export const BRAND_COLOR = Color.primary['500'];
 export const BACKGROUND_COLOR = Color.primary['500'];
