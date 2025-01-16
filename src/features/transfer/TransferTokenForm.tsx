@@ -177,7 +177,7 @@ function AmountSection({ isNft, isReview }: { isNft: boolean; isReview: boolean 
         <label htmlFor="amount" className="block pl-0.5 text-sm text-gray-600">
           Amount
         </label>
-        <TokenBalance label="My balance" balance={balance} />
+        <TokenBalance label="Balance" balance={balance} />
       </div>
       {isNft ? (
         <SelectOrInputTokenIds disabled={isReview} />
@@ -209,7 +209,7 @@ function RecipientSection({ isReview }: { isReview: boolean }) {
         <label htmlFor="recipient" className="block pl-0.5 text-sm text-gray-600">
           Recipient address
         </label>
-        <TokenBalance label="Remote balance" balance={balance} />
+        <TokenBalance label="Balance on destination chain" balance={balance} />
       </div>
       <div className="relative w-full">
         <TextField
@@ -350,7 +350,7 @@ function SelfButton({ disabled }: { disabled?: boolean }) {
       disabled={disabled}
       classes="text-xs absolute right-0.5 top-2 bottom-0.5 px-2 self-btn"
     >
-      Self
+      Use own address
     </SolidButton>
   );
 }
