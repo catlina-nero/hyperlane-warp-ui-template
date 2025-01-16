@@ -137,7 +137,6 @@ export const useStore = create<AppState>()(
             logger.error('Error during hydration', error);
             return;
           }
-          console.log('state.registry', state.registry);
           initWarpContext(state.registry, state.chainMetadataOverrides).then(
             ({ registry, chainMetadata, multiProvider, warpCore }) => {
               state.setWarpContext({ registry, chainMetadata, multiProvider, warpCore });
