@@ -39,3 +39,5 @@ export const config: Config = Object.freeze({
   transferBlacklist,
   walletConnectProjectId,
 });
+
+console.log(registryUrl)

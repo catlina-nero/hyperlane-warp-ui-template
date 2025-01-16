@@ -22,6 +22,7 @@
     "@hyperlane-xyz/utils": "7.1.0",
     "@hyperlane-xyz/widgets": "7.1.0",
     "@interchain-ui/react": "^1.23.28",
+    "@metamask/jazzicon": "^2.0.0",
     "@metamask/post-message-stream": "6.1.2",
     "@metamask/providers": "10.2.1",
     "@rainbow-me/rainbowkit": "^2.2.0",

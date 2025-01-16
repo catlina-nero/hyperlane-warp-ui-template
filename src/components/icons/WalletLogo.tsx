@@ -1,4 +1,4 @@
-import Image from 'next/image';
+/*import Image from 'next/image';
 
 import { WalletDetails } from '../../features/wallet/hooks/types';
 import Wallet from '../../images/icons/wallet.svg';
@@ -20,4 +20,4 @@ export function WalletLogo({
       className="rounded-full p-0.5"
     />
   );
-}
+}*/

@@ -26,7 +26,6 @@ const BLOCKED_COUNTRIES = [
   'SO', // Somalia
   'SS', // South Sudan
   'SD', // Sudan
-  'VE', // Venezuela
   'YE', // Yemen
   'ZW', // Zimbabwe
   'MM', // Myanmar
