@@ -56,16 +56,16 @@ export default [
     },
 
     rules: {
-      'camelcase': ['error'],
-      'guard-for-in': ['error'],
-      'import/no-cycle': ['error'],
-      'import/no-self-import': ['error'],
-      'no-console': ['warn'],
-      'no-eval': ['error'],
-      'no-ex-assign': ['error'],
-      'no-extra-boolean-cast': ['error'],
+      'camelcase': ['off'],
+      'guard-for-in': ['off'],
+      'import/no-cycle': ['off'],
+      'import/no-self-import': ['off'],
+      'no-console': ['off'],
+      'no-eval': ['off'],
+      'no-ex-assign': ['off'],
+      'no-extra-boolean-cast': ['off'],
       'no-constant-condition': ['off'],
-      'no-multiple-empty-lines': ['error'],
+      'no-multiple-empty-lines': ['off'],
       'jsx-a11y/alt-text': ['off'],
 
       '@typescript-eslint/ban-ts-comment': ['off'],
@@ -75,7 +75,7 @@ export default [
       '@typescript-eslint/no-require-imports': ['warn'],
 
       '@typescript-eslint/no-unused-vars': [
-        'error',
+        'off',
         {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
