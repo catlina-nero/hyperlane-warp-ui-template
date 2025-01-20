@@ -3,16 +3,7 @@ import { ProtocolType } from '@hyperlane-xyz/utils';
 import { getWagmiChainConfigs } from '@hyperlane-xyz/widgets';
 import { RainbowKitProvider, connectorsForWallets, lightTheme } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
-import {
-  argentWallet,
-  coinbaseWallet,
-  injectedWallet,
-  ledgerWallet,
-  metaMaskWallet,
-  rainbowWallet,
-  trustWallet,
-  walletConnectWallet,
-} from '@rainbow-me/rainbowkit/wallets';
+import { injectedWallet, metaMaskWallet } from '@rainbow-me/rainbowkit/wallets';
 import { PropsWithChildren, useMemo } from 'react';
 import { createClient, http } from 'viem';
 import { WagmiProvider, createConfig } from 'wagmi';
@@ -29,12 +20,12 @@ function initWagmi(multiProvider: MultiProtocolProvider) {
     [
       {
         groupName: 'Recommended',
-        wallets: [metaMaskWallet, injectedWallet, walletConnectWallet, ledgerWallet],
+        wallets: [metaMaskWallet, injectedWallet],
       },
-      {
-        groupName: 'More',
-        wallets: [coinbaseWallet, rainbowWallet, trustWallet, argentWallet],
-      },
+      // {
+      //   groupName: 'More',
+      //   wallets: [coinbaseWallet, rainbowWallet, trustWallet, argentWallet],
+      // },
     ],
     { appName: APP_NAME, projectId: config.walletConnectProjectId },
   );
