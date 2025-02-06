@@ -6,7 +6,6 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { config } from '../consts/config';
 import { logger } from '../utils/logger';
-import { assembleChainMetadata } from './chains/metadata';
 import { assembleWarpCoreConfig } from './tokens/warpCoreConfig';
 import { FinalTransferStatuses, TransferContext, TransferStatus } from './transfer/types';
 
@@ -155,15 +154,299 @@ async function initWarpContext(
 ) {
   try {
     const coreConfig = await assembleWarpCoreConfig();
-    const chainsInTokens = Array.from(new Set(coreConfig.tokens.map((t) => t.chainName)));
+    // const chainsInTokens = Array.from(new Set(coreConfig.tokens.map((t) => t.chainName)));
     // Pre-load registry content to avoid repeated requests
-    await registry.listRegistryContent();
-    const { chainMetadata, chainMetadataWithOverrides } = await assembleChainMetadata(
-      chainsInTokens,
-      registry,
-      storeMetadataOverrides,
-    );
-    const multiProvider = new MultiProtocolProvider(chainMetadataWithOverrides);
+    // await registry.listRegistryContent();
+    // const { chainMetadata, chainMetadataWithOverrides } = await assembleChainMetadata(
+    //   chainsInTokens,
+    //   registry,
+    //   storeMetadataOverrides,
+    // );
+    const chainMetadata: any = {
+      bsc: {
+        blockExplorers: [
+          {
+            name: 'BscScan',
+            url: 'https://bscscan.com',
+            apiUrl: 'https://api.bscscan.com/api',
+            family: 'etherscan',
+          },
+          {
+            apiUrl: 'https://api.bscscan.com/api',
+            family: 'etherscan',
+            name: 'BscScan',
+            url: 'https://bscscan.com',
+          },
+        ],
+        blocks: {
+          confirmations: 1,
+          estimateBlockTime: 3,
+          reorgPeriod: 'finalized',
+        },
+        chainId: 56,
+        deployer: {
+          name: 'Abacus Works',
+          url: 'https://www.hyperlane.xyz',
+        },
+        displayName: 'Binance',
+        displayNameShort: 'Binance',
+        domainId: 56,
+        gasCurrencyCoinGeckoId: 'binancecoin',
+        gnosisSafeTransactionServiceUrl: 'https://safe-transaction-bsc.safe.global/',
+        name: 'bsc',
+        nativeToken: {
+          decimals: 18,
+          name: 'BNB',
+          symbol: 'BNB',
+        },
+        protocol: 'ethereum',
+        rpcUrls: [
+          {
+            http: 'https://rpc.ankr.com/bsc',
+          },
+          {
+            http: 'https://bsc.drpc.org',
+          },
+          {
+            http: 'https://bscrpc.com',
+          },
+          {
+            http: 'https://rpc.ankr.com/bsc',
+          },
+          {
+            http: 'https://bsc.drpc.org',
+          },
+          {
+            http: 'https://bscrpc.com',
+          },
+        ],
+        technicalStack: 'other',
+        logoURI: '/logos/bsc.svg',
+        isTestnet: false,
+      },
+      ethereum: {
+        blockExplorers: [
+          {
+            name: 'EtherScan',
+            url: 'https://etherscan.com',
+            apiUrl: 'https://api.etherscan.com/api',
+            family: 'etherscan',
+          },
+          {
+            apiUrl: 'https://api.etherscan.io/api',
+            family: 'etherscan',
+            name: 'Etherscan',
+            url: 'https://etherscan.io',
+          },
+          {
+            apiUrl: 'https://eth.blockscout.com/api',
+            family: 'blockscout',
+            name: 'Blockscout',
+            url: 'https://blockscout.com/eth/mainnet',
+          },
+        ],
+        blocks: {
+          confirmations: 2,
+          estimateBlockTime: 13,
+          reorgPeriod: 15,
+        },
+        chainId: 1,
+        deployer: {
+          name: 'Abacus Works',
+          url: 'https://www.hyperlane.xyz',
+        },
+        displayName: 'Ethereum',
+        domainId: 1,
+        gasCurrencyCoinGeckoId: 'ethereum',
+        gnosisSafeTransactionServiceUrl: 'https://safe-transaction-mainnet.safe.global/',
+        name: 'ethereum',
+        nativeToken: {
+          decimals: 18,
+          name: 'ETH',
+          symbol: 'ETH',
+        },
+        protocol: 'ethereum',
+        rpcUrls: [
+          {
+            http: 'https://mainnet.gateway.tenderly.co',
+          },
+          {
+            http: 'https://eth.llamarpc.com',
+          },
+          {
+            http: 'https://ethereum.publicnode.com',
+          },
+          {
+            http: 'https://cloudflare-eth.com',
+          },
+        ],
+        technicalStack: 'other',
+        logoURI: '/logos/weth.png',
+        isTestnet: false,
+      },
+      oort: {
+        chainId: 970,
+        displayName: 'OORT',
+        domainId: 970,
+        isTestnet: false,
+        logoURI: '/logo.png',
+        name: 'oort',
+        nativeToken: {
+          name: 'OORT',
+          symbol: 'OORT',
+          decimals: 18,
+        },
+        protocol: 'ethereum',
+        rpcUrls: [
+          {
+            http: 'https://mainnet-rpc.oortech.com',
+          },
+        ],
+      },
+    };
+    const chainMetadataWithOverrides = {
+      bsc: {
+        blockExplorers: [
+          {
+            name: 'BscScan',
+            url: 'https://bscscan.com',
+            apiUrl: 'https://api.bscscan.com/api',
+            family: 'etherscan',
+          },
+          {
+            apiUrl: 'https://api.bscscan.com/api',
+            family: 'etherscan',
+            name: 'BscScan',
+            url: 'https://bscscan.com',
+          },
+        ],
+        blocks: {
+          confirmations: 1,
+          estimateBlockTime: 3,
+          reorgPeriod: 'finalized',
+        },
+        chainId: 56,
+        deployer: {
+          name: 'Abacus Works',
+          url: 'https://www.hyperlane.xyz',
+        },
+        displayName: 'Binance',
+        displayNameShort: 'Binance',
+        domainId: 56,
+        gasCurrencyCoinGeckoId: 'binancecoin',
+        gnosisSafeTransactionServiceUrl: 'https://safe-transaction-bsc.safe.global/',
+        name: 'bsc',
+        nativeToken: {
+          decimals: 18,
+          name: 'BNB',
+          symbol: 'BNB',
+        },
+        protocol: 'ethereum',
+        rpcUrls: [
+          {
+            http: 'https://rpc.ankr.com/bsc',
+          },
+          {
+            http: 'https://bsc.drpc.org',
+          },
+          {
+            http: 'https://bscrpc.com',
+          },
+          {
+            http: 'https://rpc.ankr.com/bsc',
+          },
+          {
+            http: 'https://bsc.drpc.org',
+          },
+          {
+            http: 'https://bscrpc.com',
+          },
+        ],
+        technicalStack: 'other',
+        logoURI: '/logos/bsc.svg',
+        isTestnet: false,
+      },
+      ethereum: {
+        blockExplorers: [
+          {
+            name: 'EtherScan',
+            url: 'https://etherscan.com',
+            apiUrl: 'https://api.etherscan.com/api',
+            family: 'etherscan',
+          },
+          {
+            apiUrl: 'https://api.etherscan.io/api',
+            family: 'etherscan',
+            name: 'Etherscan',
+            url: 'https://etherscan.io',
+          },
+          {
+            apiUrl: 'https://eth.blockscout.com/api',
+            family: 'blockscout',
+            name: 'Blockscout',
+            url: 'https://blockscout.com/eth/mainnet',
+          },
+        ],
+        blocks: {
+          confirmations: 2,
+          estimateBlockTime: 13,
+          reorgPeriod: 15,
+        },
+        chainId: 1,
+        deployer: {
+          name: 'Abacus Works',
+          url: 'https://www.hyperlane.xyz',
+        },
+        displayName: 'Ethereum',
+        domainId: 1,
+        gasCurrencyCoinGeckoId: 'ethereum',
+        gnosisSafeTransactionServiceUrl: 'https://safe-transaction-mainnet.safe.global/',
+        name: 'ethereum',
+        nativeToken: {
+          decimals: 18,
+          name: 'ETH',
+          symbol: 'ETH',
+        },
+        protocol: 'ethereum',
+        rpcUrls: [
+          {
+            http: 'https://mainnet.gateway.tenderly.co',
+          },
+          {
+            http: 'https://eth.llamarpc.com',
+          },
+          {
+            http: 'https://ethereum.publicnode.com',
+          },
+          {
+            http: 'https://cloudflare-eth.com',
+          },
+        ],
+        technicalStack: 'other',
+        logoURI: '/logos/weth.png',
+        isTestnet: false,
+      },
+      oort: {
+        chainId: 970,
+        displayName: 'OORT',
+        domainId: 970,
+        isTestnet: false,
+        logoURI: '/logo.png',
+        name: 'oort',
+        nativeToken: {
+          name: 'OORT',
+          symbol: 'OORT',
+          decimals: 18,
+        },
+        protocol: 'ethereum',
+        rpcUrls: [
+          {
+            http: 'https://mainnet-rpc.oortech.com',
+          },
+        ],
+      },
+    };
+    const multiProvider = new MultiProtocolProvider(chainMetadataWithOverrides as any);
     const warpCore = WarpCore.FromConfig(multiProvider, coreConfig);
     return { registry, chainMetadata, multiProvider, warpCore };
   } catch (error) {
