@@ -30,7 +30,7 @@ export const config: Config = Object.freeze({
   chainWalletWhitelists,
   enableExplorerLink: false,
   isDevMode,
-  registryUrl: undefined,
+  registryUrl: registryUrl,
   registryBranch,
   registryProxyUrl,
   showDisabledTokens: false,
