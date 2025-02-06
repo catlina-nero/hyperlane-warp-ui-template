@@ -30,7 +30,7 @@ export const config: Config = Object.freeze({
   chainWalletWhitelists,
   enableExplorerLink: false,
   isDevMode,
-  registryUrl: 'https://github.com/catlina-nero/hyperlane-registry',
+  registryUrl: undefined,
   registryBranch,
   registryProxyUrl,
   showDisabledTokens: false,
@@ -39,5 +39,3 @@ export const config: Config = Object.freeze({
   transferBlacklist,
   walletConnectProjectId,
 });
-
-console.log(registryUrl)
