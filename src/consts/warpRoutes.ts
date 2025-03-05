@@ -60,7 +60,7 @@ export const warpRouteConfigs: WarpCoreConfig = {
     },
     
     // USDC & USDC.e Section
-    /*{
+    {
       chainName: 'ethereum',
       standard: TokenStandard.EvmHypCollateral,
       decimals: 6,
@@ -89,7 +89,7 @@ export const warpRouteConfigs: WarpCoreConfig = {
           token: 'ethereum|ethereum|0x2e14C105767026E5e186037198E93D7aE0639937',
         },
       ],
-    },*/
+    },
   ],
   options: {},
 };
